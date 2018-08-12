@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Articles</h1>
+    <hr>
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+        </tr>
+        {% for article in articles %}
+            <tr>
+                <th>{{article.id}}</th>
+                <th><a href="/article/{{article.id}}">{{article.title}}</a></th>
+                <th>{{article.author}}</th>
+                <th>{{article.create_date}}</th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
